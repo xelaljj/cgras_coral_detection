@@ -43,7 +43,7 @@ def load_config(config_path, logger=None):
         logger.error(f"Error loading config file: {e}")
         sys.exit(1)
 
-def run_folder_structure(config, input_path, output_path):
+def run_folder_structure(config, input_path, output_path, logger):
     """Run the folder structure step."""
     logger.info("Starting folder structure step...")
     
@@ -296,7 +296,7 @@ def run_pipeline(config, logger=None):
 if __name__ == "__main__":
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Run CGRAS data processing pipeline')
-    parser.add_argument('--config', '-c', default='config.yaml',
+    parser.add_argument('--config', '-c', default='/home/alexanderjones/Alex/hpc-home/repos/cgras_coral_detection/image_processing/config/pdae_130.yaml',
                         help='Path to the configuration YAML file')
     parser.add_argument('--debug', '-d', action='store_true',
                         help='Enable debug logging')
